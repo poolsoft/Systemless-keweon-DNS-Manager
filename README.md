@@ -25,11 +25,11 @@ In the meantime keweon is more than a stupid Adblock System:
 
 ### Do you need to pay something or register?
 
-NO. There is no need to register and you don't need to pay for it. I have a vision and this vision will stay. Here it is to much to explain all of this but more will comming soon on the website www.keweon.de and www.keweon.com.
+NO. There is no need to register and you don't need to pay for it. There is a vision for keweon and that vision will stay. Here it is too much to explain all of these but more will comming soon on the website www.keweon.de and www.keweon.com.
 
 ### What kind of data keweon will collect?
 
-Not even one byte of anything, of you or of your device or devices. That was the main problem for all my investors. With DNS technologie it is even not possible to collect any data from users. That was also the main reason why I have invented everything on DNS working.
+Not even one byte of anything, of you or of your device(s). That was the main problem for all investors. With DNS technologie it is even not possible to collect any data from users. That was also the main reason why everything is DNS based.
 
 ### How to use
 
