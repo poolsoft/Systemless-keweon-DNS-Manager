@@ -2,7 +2,7 @@
 #
 # Systemless keweon DNS Manager (Source : Systemless-DNS-Changer-v1.0)
 # Thanks to xda, tanu548@xda-developers and to all users who contribute
-ver='v1.3' > /dev/null 2>&1
+ver='v1.4' > /dev/null 2>&1
 released='Sat, 30 June 2018' > /dev/null 2>&1
 #
 divider='======================================================' > /dev/null 2>&1
