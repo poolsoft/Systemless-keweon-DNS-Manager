@@ -39,3 +39,7 @@ Not even one byte of anything, of you or of your device(s). That was the main pr
 
 ### Links
 [Official XDA Forum](https://forum.xda-developers.com/android/software-hacking/keweon-privacy-online-security-t3681139/ "keweon Privacy Security - thanks to all keweonDNS Users")
+
+### Note
+
+* This module is maintained with the agreement and permission of Torsten Jahnke(https://github.com/TorstenJahnke), the creator of keweon. 
