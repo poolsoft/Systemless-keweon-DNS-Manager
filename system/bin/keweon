@@ -6,7 +6,7 @@ ver='v1.3' > /dev/null 2>&1
 released='Sat, 30 June 2018' > /dev/null 2>&1
 #
 divider='======================================================' > /dev/null 2>&1
-magisk='/magisk' > /dev/null 2>&1
+magisk='/sbin/.core/img' > /dev/null 2>&1
 core=$magisk'/keweon-DNS' > /dev/null 2>&1
 dns_stored=$core'/post-fs-data.sh' > /dev/null 2>&1
 id="$(id)"; id="${id#*=}"; id="${id%%\(*}"; id="${id%% *}"
