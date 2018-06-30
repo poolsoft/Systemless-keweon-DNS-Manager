@@ -1,7 +1,7 @@
-id=keweon DNS Manager
+id=keweon-DNS
 name=Systemless keweon DNS Manager
-version=v1.2
-versionCode=03
+version=v1.3
+versionCode=04
 author=bhaskarjy0ti
-description=open terminal and type "su" then "keweon" to use.
+description=Open terminal and type "keweon" to use.
 minMagisk=1500
