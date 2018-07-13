@@ -396,7 +396,6 @@ DNS_Checker
 echo -e $Y"$divider"$N
 echo -e $W'CURRENT Primary DNS:'$N $currentPriDNS
 echo -e $W'CURRENT Secondary DNS:'$N $currentSecDNS
-echo -e $W' e. Exit'$N
 echo -e $Y"$divider"$N
 echo -e -n $W'[Press `e` to exit] : '$N
 read -r option
