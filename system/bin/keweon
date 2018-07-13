@@ -2,8 +2,8 @@
 #
 # Systemless keweon DNS Manager (Source : Systemless-DNS-Changer-v1.0)
 # Thanks to xda, tanu548@xda-developers and to all users who contribute
-ver='v1.4' > /dev/null 2>&1
-released='Sat, 30 June 2018' > /dev/null 2>&1
+ver='v1.5' > /dev/null 2>&1
+released='Fri, 13 July 2018' > /dev/null 2>&1
 #
 divider='======================================================' > /dev/null 2>&1
 magisk='/sbin/.core/img' > /dev/null 2>&1
@@ -41,208 +41,367 @@ else
 	echo -e $Y"$divider"$N
 	sleep 1
 fi
-while :
-do
 # Magisk partition mounting...
 mount -o rw,remount,rw /magisk > /dev/null 2>&1
+while :
+do
 # DNS Remover
 DNS_line_remover ( ) {
-		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 176.9.62.58:53/d' $dns_stored
 		sed -i '/iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 176.9.62.58:53/d' $dns_stored
-		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 176.9.62.62:53/d' $dns_stored
+		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 176.9.62.58:53/d' $dns_stored
 		sed -i '/iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 176.9.62.62:53/d' $dns_stored
-		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.76.125.130:53/d' $dns_stored
+		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 176.9.62.62:53/d' $dns_stored
 		sed -i '/iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.76.125.130:53/d' $dns_stored
-		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.62.37:53/d' $dns_stored
+		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.76.125.130:53/d' $dns_stored
 		sed -i '/iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.77.62.37:53/d' $dns_stored
-		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 213.32.112.244:53/d' $dns_stored
-		sed -i '/iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 213.32.112.244:53/d' $dns_stored
-		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 104.207.131.11:53/d' $dns_stored
+		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.62.37:53/d' $dns_stored
 		sed -i '/iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 104.207.131.11:53/d' $dns_stored
-		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.25.72:53/d' $dns_stored
+		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 104.207.131.11:53/d' $dns_stored
 		sed -i '/iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.77.25.72:53/d' $dns_stored
-		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.138.206:53/d' $dns_stored
+		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.25.72:53/d' $dns_stored
 		sed -i '/iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.77.138.206:53/d' $dns_stored
-		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.76.151.221:53/d' $dns_stored
+		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.138.206:53/d' $dns_stored
 		sed -i '/iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.76.151.221:53/d' $dns_stored
-		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.32.183.39:53/d' $dns_stored
+		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.76.151.221:53/d' $dns_stored
 		sed -i '/iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.32.183.39:53/d' $dns_stored
-		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.76.57.41:53/d' $dns_stored
+		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.32.183.39:53/d' $dns_stored
 		sed -i '/iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.76.57.41:53/d' $dns_stored
-		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.144.132:53/d' $dns_stored
+		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.76.57.41:53/d' $dns_stored
 		sed -i '/iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.77.144.132:53/d' $dns_stored
-		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.32.140.26:53/d' $dns_stored
+		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.144.132:53/d' $dns_stored
 		sed -i '/iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.32.140.26:53/d' $dns_stored
-		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 139.59.33.236:53/d' $dns_stored
+		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.32.140.26:53/d' $dns_stored
 		sed -i '/iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 139.59.33.236:53/d' $dns_stored
+		sed -i '/iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 139.59.33.236:53/d' $dns_stored
 }
-# DNS checker...
-if grep -q 176.9.62.58 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Keweon Primary DNS-I'$N
-elif grep -q 176.9.62.62 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Primary DNS-II'$N
-elif grep -q 45.76.125.130 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Keweon Australia/Sidney DNS'$N
-elif grep -q 45.77.62.37 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Keweon France/Paris DNS'$N
-elif grep -q 213.32.112.244 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Keweon France/Roubaix DNS'$N
-elif grep -q 104.207.131.11 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Keweon Germany/FFM DNS'$N
-elif grep -q 45.77.25.72 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Keweon Japan/Tokio DNS'$N
-elif grep -q 45.77.138.206 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Keweon Netherland/Amsterdam DNS'$N
-elif grep -q 45.76.151.221 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Keweon Singapore/Singapore DNS'$N
-elif grep -q 45.32.183.39 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Keweon UK/Londone DNS'$N
-elif grep -q 45.76.57.41 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Keweon USA/Dallas DNS'$N
-elif grep -q 45.77.144.132 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Keweon USA/New Jersey DNS'$N
-elif grep -q 45.32.140.26 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Keweon USA/Silicon Valley DNS'$N
-elif grep -q 139.59.33.236 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Keweon India/Bangalore DNS'$N
-elif grep -q 208.67.222.222 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Open DNS'$N
-elif grep -q 176.103.130.130 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Adguard  DNS'$N
-elif grep -q 8.8.8.8 $dns_stored > /dev/null 2>&1
-then
-	current_dns=$G'Google DNS'$N
-else
-	current_dns=$B'Default'$N
-fi
+DNS_Checker() {
+	# Get Current DNS ...
+	getPriDNS="$(sed '1!d' $dns_stored)"
+	getSecDNS="$(sed '3!d' $dns_stored)"
+	# Check Current Primary DNS ...
+	if echo $getPriDNS | grep -q  176.9.62.58 > /dev/null 2>&1
+	then
+		currentPriDNS=$G'Keweon Primary DNS-I'$N
+	elif echo $getPriDNS | grep -q  176.9.62.62 > /dev/null 2>&1
+	then
+		currentPriDNS=$G'Primary DNS-II'$N
+	elif echo $getPriDNS | grep -q  45.76.125.130 > /dev/null 2>&1
+	then
+		currentPriDNS=$G'Keweon Australia/Sidney DNS'$N
+	elif echo $getPriDNS | grep -q  45.77.62.37 > /dev/null 2>&1
+	then
+		currentPriDNS=$G'Keweon France/Paris DNS'$N
+	elif echo $getPriDNS | grep -q  104.207.131.11 > /dev/null 2>&1
+	then
+		currentPriDNS=$G'Keweon Germany/FFM DNS'$N
+	elif echo $getPriDNS | grep -q  45.77.25.72 > /dev/null 2>&1
+	then
+		currentPriDNS=$G'Keweon Japan/Tokio DNS'$N
+	elif echo $getPriDNS | grep -q  45.77.138.206 > /dev/null 2>&1
+	then
+		currentPriDNS=$G'Keweon Netherland/Amsterdam DNS'$N
+	elif echo $getPriDNS | grep -q  45.76.151.221 > /dev/null 2>&1
+	then
+		currentPriDNS=$G'Keweon Singapore/Singapore DNS'$N
+	elif echo $getPriDNS | grep -q  45.32.183.39 > /dev/null 2>&1
+	then
+		currentPriDNS=$G'Keweon UK/Londone DNS'$N
+	elif echo $getPriDNS | grep -q  45.76.57.41 > /dev/null 2>&1
+	then
+		currentPriDNS=$G'Keweon USA/Dallas DNS'$N
+	elif echo $getPriDNS | grep -q  45.77.144.132 > /dev/null 2>&1
+	then
+		currentPriDNS=$G'Keweon USA/New Jersey DNS'$N
+	elif echo $getPriDNS | grep -q  45.32.140.26 > /dev/null 2>&1
+	then
+		currentPriDNS=$G'Keweon USA/Silicon Valley DNS'$N
+	elif echo $getPriDNS | grep -q  139.59.33.236 > /dev/null 2>&1
+	then
+		currentPriDNS=$G'Keweon India/Bangalore DNS'$N
+	else
+		currentPriDNS=$B'Default'$N
+	fi
+	# Check Current Secondary DNS ...
+	if echo $getSecDNS | grep -q  176.9.62.58 > /dev/null 2>&1
+	then
+		currentSecDNS=$G'Keweon Primary DNS-I'$N
+	elif echo $getSecDNS | grep -q  176.9.62.62 > /dev/null 2>&1
+	then
+		currentSecDNS=$G'Primary DNS-II'$N
+	elif echo $getSecDNS | grep -q  45.76.125.130 > /dev/null 2>&1
+	then
+		currentSecDNS=$G'Keweon Australia/Sidney DNS'$N
+	elif echo $getSecDNS | grep -q  45.77.62.37 > /dev/null 2>&1
+	then
+		currentSecDNS=$G'Keweon France/Paris DNS'$N
+	elif echo $getSecDNS | grep -q  104.207.131.11 > /dev/null 2>&1
+	then
+		currentSecDNS=$G'Keweon Germany/FFM DNS'$N
+	elif echo $getSecDNS | grep -q  45.77.25.72 > /dev/null 2>&1
+	then
+		currentSecDNS=$G'Keweon Japan/Tokio DNS'$N
+	elif echo $getSecDNS | grep -q  45.77.138.206 > /dev/null 2>&1
+	then
+		currentSecDNS=$G'Keweon Netherland/Amsterdam DNS'$N
+	elif echo $getSecDNS | grep -q  45.76.151.221 > /dev/null 2>&1
+	then
+		currentSecDNS=$G'Keweon Singapore/Singapore DNS'$N
+	elif echo $getSecDNS | grep -q  45.32.183.39 > /dev/null 2>&1
+	then
+		currentSecDNS=$G'Keweon UK/Londone DNS'$N
+	elif echo $getSecDNS | grep -q  45.76.57.41 > /dev/null 2>&1
+	then
+		currentSecDNS=$G'Keweon USA/Dallas DNS'$N
+	elif echo $getSecDNS | grep -q  45.77.144.132 > /dev/null 2>&1
+	then
+		currentSecDNS=$G'Keweon USA/New Jersey DNS'$N
+	elif echo $getSecDNS | grep -q  45.32.140.26 > /dev/null 2>&1
+	then
+		currentSecDNS=$G'Keweon USA/Silicon Valley DNS'$N
+	elif echo $getSecDNS | grep -q  139.59.33.236 > /dev/null 2>&1
+	then
+		currentSecDNS=$G'Keweon India/Bangalore DNS'$N
+	else
+		currentSecDNS=$B'Default'$N
+	fi
+}
+# Set Primary DNS ...
 clear
+DNS_Checker
 echo -e $Y"$divider"$N
-echo -e $W'CURRENT :'$N $current_dns
-echo -e $W'1. Keweon Primary DNS-I'$N
-echo -e $W'2. Keweon Primary DNS-II'$N
-echo -e $W'3. Keweon Australia/Sidney DNS'$N
-echo -e $W'4. Keweon France/Paris DNS'$N
-echo -e $W'5. Keweon France/Roubaix DNS'$N
-echo -e $W'6. Keweon Germany/FFM DNS'$N
-echo -e $W'7. Keweon Japan/Tokio DNS'$N
-echo -e $W'8. Keweon Netherland/Amsterdam DNS'$N
-echo -e $W'9. Keweon Singapore/Singapore DNS'$N
-echo -e $W'10.Keweon UK/Londone DNS'$N
-echo -e $W'11.Keweon USA/Dallas DNS'$N
-echo -e $W'12.Keweon USA/New Jersey DNS'$N
-echo -e $W'13.Keweon USA/Silicon Valley DNS'$N
-echo -e $W'14.Keweon India/Bangalore DNS'$N
-echo -e $W'15.Restore Default DNS'$N
-echo -e $W'0. Exit'$N
+echo -e $W'CURRENT Primary DNS:'$N $currentPriDNS
+echo -e $W'CURRENT Secondary DNS:'$N $currentSecDNS
+echo -e $W' 1. Keweon Primary DNS-I'$N
+echo -e $W' 2. Keweon Primary DNS-II'$N
+echo -e $W' 3. Keweon Australia/Sidney DNS'$N
+echo -e $W' 4. Keweon France/Paris DNS'$N
+echo -e $W' 5. Keweon Germany/FFM DNS'$N
+echo -e $W' 6. Keweon Japan/Tokio DNS'$N
+echo -e $W' 7. Keweon Netherland/Amsterdam DNS'$N
+echo -e $W' 8. Keweon Singapore/Singapore DNS'$N
+echo -e $W' 9. Keweon UK/Londone DNS'$N
+echo -e $W'10. Keweon USA/Dallas DNS'$N
+echo -e $W'11. Keweon USA/New Jersey DNS'$N
+echo -e $W'12. Keweon USA/Silicon Valley DNS'$N
+echo -e $W'13. Keweon India/Bangalore DNS'$N
+echo -e $W'14. Restore Default DNS'$N
+echo -e $W' e. Exit'$N
 echo -e $Y"$divider"$N
-echo -e -n $W'[CHOOSE] : '$N
-read -r DNS_ADDRESSED
-case $DNS_ADDRESSED in
+echo -e -n $W'[CHOOSE PRIMARY DNS][Press `e` to exit] : '$N
+read -r option
+case $option in
 	1)
 	clear
 		DNS_line_remover
-		echo 'iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 176.9.62.58:53' >> $dns_stored
-		echo 'iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 176.9.62.58:53' >> $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 176.9.62.58:53' $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 176.9.62.58:53' $dns_stored
 	;;
 	2)
 	clear
 		DNS_line_remover
-		echo 'iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 176.9.62.62:53' >> $dns_stored
-		echo 'iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 176.9.62.62:53' >> $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 176.9.62.62:53' $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 176.9.62.62:53' $dns_stored
 	;;
 	3)
 	clear
 		DNS_line_remover
-		echo 'iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.76.125.130:53' >> $dns_stored
-		echo 'iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.76.125.130:53' >> $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.76.125.130:53' $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.76.125.130:53' $dns_stored
 	;;
 	4)
 	clear
 		DNS_line_remover
-		echo 'iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.62.37:53' >> $dns_stored
-		echo 'iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.77.62.37:53' >> $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.77.62.37:53' $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.62.37:53' $dns_stored
 	;;
 	5)
 	clear
 		DNS_line_remover
-		echo 'iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 213.32.112.244:53' >> $dns_stored
-		echo 'iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 213.32.112.244:53' >> $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 104.207.131.11:53' $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 104.207.131.11:53' $dns_stored
 	;;
 	6)
 	clear
 		DNS_line_remover
-		echo 'iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 104.207.131.11:53' >> $dns_stored
-		echo 'iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 104.207.131.11:53' >> $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.77.25.72:53' $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.25.72:53' $dns_stored
 	;;
 	7)
 	clear
 		DNS_line_remover
-		echo 'iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.25.72:53' >> $dns_stored
-		echo 'iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.77.25.72:53' >> $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.77.138.206:53' $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.138.206:53' $dns_stored
 	;;
 	8)
 	clear
 		DNS_line_remover
-		echo 'iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.138.206:53' >> $dns_stored
-		echo 'iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.77.138.206:53' >> $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.76.151.221:53' $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.76.151.221:53' $dns_stored
 	;;
 	9)
 	clear
 		DNS_line_remover
-		echo 'iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.76.151.221:53' >> $dns_stored
-		echo 'iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.76.151.221:53' >> $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.32.183.39:53' $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.32.183.39:53' $dns_stored
 	;;
 	10)
 	clear
 		DNS_line_remover
-		echo 'iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.32.183.39:53' >> $dns_stored
-		echo 'iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.32.183.39:53' >> $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.76.57.41:53' $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.76.57.41:53' $dns_stored
 	;;
 	11)
 	clear
 		DNS_line_remover
-		echo 'iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.76.57.41:53' >> $dns_stored
-		echo 'iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.76.57.41:53' >> $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.77.144.132:53' $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.144.132:53' $dns_stored
 	;;
 	12)
 	clear
 		DNS_line_remover
-		echo 'iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.144.132:53' >> $dns_stored
-		echo 'iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.77.144.132:53' >> $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.32.140.26:53' $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.32.140.26:53' $dns_stored
 	;;
 	13)
 	clear
 		DNS_line_remover
-		echo 'iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.32.140.26:53' >> $dns_stored
-		echo 'iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.32.140.26:53' >> $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 139.59.33.236:53' $dns_stored
+		sed -i '1iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 139.59.33.236:53' $dns_stored
 	;;
 	14)
 	clear
 		DNS_line_remover
-		echo 'iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 139.59.33.236:53' >> $dns_stored
-		echo 'iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 139.59.33.236:53' >> $dns_stored
 	;;
-	15)
+	e)
+	clear
+	echo -e $B"$divider"$N
+	echo ''
+	echo -e $G'           PLEASE REBOOT TO APPLY CHANGES   '$N
+	echo ''
+	echo -e $B"$divider"$N
+	sleep 1
+	mount -o ro,remount,ro /magisk > /dev/null 2>&1
+	exit 0
+	;;
+esac
+# Set Secondary DNS ...
+clear
+DNS_Checker
+echo -e $Y"$divider"$N
+echo -e $W'CURRENT Primary DNS:'$N $currentPriDNS
+echo -e $W'CURRENT Secondary DNS:'$N $currentSecDNS
+echo -e $W' 1. Keweon Primary DNS-I'$N
+echo -e $W' 2. Keweon Primary DNS-II'$N
+echo -e $W' 3. Keweon Australia/Sidney DNS'$N
+echo -e $W' 4. Keweon France/Paris DNS'$N
+echo -e $W' 5. Keweon Germany/FFM DNS'$N
+echo -e $W' 6. Keweon Japan/Tokio DNS'$N
+echo -e $W' 7. Keweon Netherland/Amsterdam DNS'$N
+echo -e $W' 8. Keweon Singapore/Singapore DNS'$N
+echo -e $W' 9. Keweon UK/Londone DNS'$N
+echo -e $W'10. Keweon USA/Dallas DNS'$N
+echo -e $W'11. Keweon USA/New Jersey DNS'$N
+echo -e $W'12. Keweon USA/Silicon Valley DNS'$N
+echo -e $W'13. Keweon India/Bangalore DNS'$N
+echo -e $W'14. Restore Default DNS'$N
+echo -e $W' e. Exit'$N
+echo -e $Y"$divider"$N
+echo -e -n $W'[CHOOSE SECONDARY DNS][Press`e` to exit] : '$N
+read -r option
+case $option in
+	1)
+	clear
+		sed -i '3iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 176.9.62.58:53' $dns_stored
+		sed -i '3iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 176.9.62.58:53' $dns_stored
+	;;
+	2)
+	clear
+		sed -i '3iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 176.9.62.62:53' $dns_stored
+		sed -i '3iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 176.9.62.62:53' $dns_stored
+	;;
+	3)
+	clear
+		sed -i '3iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.76.125.130:53' $dns_stored
+		sed -i '3iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.76.125.130:53' $dns_stored
+	;;
+	4)
+	clear
+		sed -i '3iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.77.62.37:53' $dns_stored
+		sed -i '3iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.62.37:53' $dns_stored
+	;;
+	5)
+	clear
+		sed -i '3iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 104.207.131.11:53' $dns_stored
+		sed -i '3iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 104.207.131.11:53' $dns_stored
+	;;
+	6)
+	clear
+		sed -i '3iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.77.25.72:53' $dns_stored
+		sed -i '3iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.25.72:53' $dns_stored
+	;;
+	7)
+	clear
+		sed -i '3iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.77.138.206:53' $dns_stored
+		sed -i '3iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.138.206:53' $dns_stored
+	;;
+	8)
+	clear
+		sed -i '3iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.76.151.221:53' $dns_stored
+		sed -i '3iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.76.151.221:53' $dns_stored
+	;;
+	9)
+	clear
+		sed -i '3iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.32.183.39:53' $dns_stored
+		sed -i '3iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.32.183.39:53' $dns_stored
+	;;
+	10)
+	clear
+		sed -i '3iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.76.57.41:53' $dns_stored
+		sed -i '3iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.76.57.41:53' $dns_stored
+	;;
+	11)
+	clear
+		sed -i '3iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.77.144.132:53' $dns_stored
+		sed -i '3iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.77.144.132:53' $dns_stored
+	;;
+	12)
+	clear
+		sed -i '3iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 45.32.140.26:53' $dns_stored
+		sed -i '3iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 45.32.140.26:53' $dns_stored
+	;;
+	13)
+	clear
+		sed -i '3iiptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 139.59.33.236:53' $dns_stored
+		sed -i '3iiptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 139.59.33.236:53' $dns_stored
+	;;
+	14)
 	clear
 		DNS_line_remover
 	;;
-	0)
+	e)
+	clear
+	echo -e $B"$divider"$N
+	echo ''
+	echo -e $G'           PLEASE REBOOT TO APPLY CHANGES   '$N
+	echo ''
+	echo -e $B"$divider"$N
+	sleep 1
+	mount -o ro,remount,ro /magisk > /dev/null 2>&1
+	exit 0
+	;;
+esac
+# Exit ..
+clear
+DNS_Checker
+echo -e $Y"$divider"$N
+echo -e $W'CURRENT Primary DNS:'$N $currentPriDNS
+echo -e $W'CURRENT Secondary DNS:'$N $currentSecDNS
+echo -e $W' e. Exit'$N
+echo -e $Y"$divider"$N
+echo -e -n $W'[Press `e` to exit] : '$N
+read -r option
+case $option in
+	e)
 	clear
 	echo -e $B"$divider"$N
 	echo ''
